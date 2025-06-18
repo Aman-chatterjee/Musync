@@ -29,24 +29,24 @@
 <table>
   <tr>
     <td align="center">
-      <img src="./screenshots/login_screen.jpeg" width="200"/><br/><b>Login Screen</b>
+      <img src="../screenshots/login_screen.jpg" width="200"/><br/><b>Login Screen</b>
     </td>
     <td align="center">
-      <img src="./screenshots/signup_screen.jpeg" width="200"/><br/><b>Signup Screen</b>
+      <img src="../screenshots/signup_screen.jpeg" width="200"/><br/><b>Signup Screen</b>
     </td>
     <td align="center">
-      <img src="./screenshots/home_screen.jpeg" width="200"/><br/><b>Home Screen</b>
+      <img src="../screenshots/home_screen.jpeg" width="200"/><br/><b>Home Screen</b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="./screenshots/music_player.jpeg" width="200"/><br/><b>Music Player</b>
+      <img src="../screenshots/music_player.jpeg" width="200"/><br/><b>Music Player</b>
     </td>
     <td align="center">
-      <img src="./screenshots/favorites.jpeg" width="200"/><br/><b>Favorites</b>
+      <img src="../screenshots/favorites.jpeg" width="200"/><br/><b>Favorites</b>
     </td>
      <td align="center">
-      <img src="./screenshots/upload_screen.jpeg" width="200"/><br/><b>Upload Music</b>
+      <img src="../screenshots/upload_screen.jpeg" width="200"/><br/><b>Upload Music</b>
     </td>
   </tr>
 </table>
