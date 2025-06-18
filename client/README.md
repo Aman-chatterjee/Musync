@@ -29,7 +29,7 @@
 <table>
   <tr>
     <td align="center">
-      <img src="../screenshots/login_screen.jpg" width="200"/><br/><b>Login Screen</b>
+      <img src="../screenshots/login_screen.jpeg" width="200"/><br/><b>Login Screen</b>
     </td>
     <td align="center">
       <img src="../screenshots/signup_screen.jpeg" width="200"/><br/><b>Signup Screen</b>
