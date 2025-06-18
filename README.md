@@ -58,6 +58,7 @@
 ### 📁 Project Structure
 musync/
 ├── client/        # Flutter frontend
+
 ├── server/        # FastAPI backend (Docker-ready)
 
 ---
@@ -82,8 +83,8 @@ flutter run
 🖥️ FastAPI Backend Setup (Dockerized)
 
 Prerequisites:
-	•	Docker & Docker Compose installed
-	•	Cloudinary account for music storage
+•	Docker & Docker Compose installed
+•	Cloudinary account for music storage
 
 Steps:
 ```bash
@@ -116,8 +117,8 @@ CLOUDINARY_SECRET_KEY=your_secret
 ```
 
 📬 Contact
-	•	GitHub: @Aman-chatterjee
-	•	Email: amanchatterjee121@gmail.com
+•	GitHub: @Aman-chatterjee
+•	Email: amanchatterjee121@gmail.com
 
 ⸻
 
