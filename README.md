@@ -118,6 +118,7 @@ CLOUDINARY_SECRET_KEY=your_secret
 ```
 
 📬 Contact
+
 •	GitHub: @Aman-chatterjee
 
 •	Email: amanchatterjee121@gmail.com
