@@ -58,7 +58,6 @@
 ### 📁 Project Structure
 musync/
 ├── client/        # Flutter frontend
-
 ├── server/        # FastAPI backend (Docker-ready)
 
 ---
