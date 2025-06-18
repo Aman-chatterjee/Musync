@@ -1,0 +1,2 @@
+/Volumes/Aman's SSD/Projects/Flutter/Musync/client/android/app/.cxx/Debug/3n2g34g7/x86/CMakeFiles/edit_cache.dir
+/Volumes/Aman's SSD/Projects/Flutter/Musync/client/android/app/.cxx/Debug/3n2g34g7/x86/CMakeFiles/rebuild_cache.dir

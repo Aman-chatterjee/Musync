@@ -59,8 +59,8 @@ class CurrentMusicNotifier extends _$CurrentMusicNotifier {
     }
   }
 
-  void seek(double val) {
-    audioPlayer!.seek(Duration(
+  void seek(double val) async {
+    await audioPlayer!.seek(Duration(
         milliseconds: (val * audioPlayer!.duration!.inMilliseconds).toInt()));
   }
 }

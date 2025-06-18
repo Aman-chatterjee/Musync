@@ -7,7 +7,7 @@ part of 'current_music_notifier.dart';
 // **************************************************************************
 
 String _$currentMusicNotifierHash() =>
-    r'2125413a5070cb9c99e26bfcb351e9aab6150ec1';
+    r'a9ddc599273cbfa7df2095f2885f0062fc89f370';
 
 /// See also [CurrentMusicNotifier].
 @ProviderFor(CurrentMusicNotifier)

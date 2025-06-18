@@ -5,12 +5,20 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:musync/core/providers/current_music_notifier.dart';
 import 'package:musync/core/theme/app_pallete.dart';
 import 'package:musync/core/utils.dart';
+import 'package:musync/features/home/view/viewmodel/home_viewmodel.dart';
 
-class MusicPlayer extends ConsumerWidget {
+class MusicPlayer extends ConsumerStatefulWidget {
   const MusicPlayer({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<MusicPlayer> createState() => _MusicPlayerState();
+}
+
+class _MusicPlayerState extends ConsumerState<MusicPlayer> {
+  bool _isDragging = false; // Track whether the user is dragging the slider
+  double _sliderValue = 0.0;
+  @override
+  Widget build(BuildContext context) {
     // Replace with your provider
     final currentMusic = ref.watch(currentMusicNotifierProvider);
     final musicNotifier = ref.read(currentMusicNotifierProvider.notifier);
@@ -104,7 +112,11 @@ class MusicPlayer extends ConsumerWidget {
                         ],
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          await ref
+                              .read(homeViewModelProvider.notifier)
+                              .favMusic(musicId: currentMusic.id);
+                        },
                         icon: Icon(CupertinoIcons.heart),
                         color: Pallete.whiteColor,
                       ),
@@ -122,42 +134,42 @@ class MusicPlayer extends ConsumerWidget {
                         }
                         final position = snapshot.data;
                         final duration = musicNotifier.audioPlayer!.duration;
-                        double sliderValue = 0.0;
-                        if (position != null && duration != null) {
-                          sliderValue =
+
+                        if (!_isDragging &&
+                            position != null &&
+                            duration != null) {
+                          _sliderValue =
                               position.inMilliseconds / duration.inMilliseconds;
                         }
 
                         return Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            StatefulBuilder(
-                              builder: (context, setState) {
-                                return SliderTheme(
-                                  data: SliderTheme.of(context).copyWith(
-                                      activeTrackColor: Pallete.whiteColor,
-                                      inactiveTrackColor:
-                                          // ignore: deprecated_member_use
-                                          Pallete.whiteColor.withOpacity(0.117),
-                                      thumbColor: Pallete.whiteColor,
-                                      trackHeight: 4,
-                                      overlayShape:
-                                          SliderComponentShape.noOverlay),
-                                  child: Slider(
-                                    value: sliderValue,
-                                    min: 0,
-                                    max: 1,
-                                    onChanged: (val) {
-                                      setState(() {
-                                        sliderValue = val;
-                                      });
-                                    },
-                                    onChangeEnd: (val) {
-                                      musicNotifier.seek(val);
-                                    },
-                                  ),
-                                );
-                              },
+                            SliderTheme(
+                              data: SliderTheme.of(context).copyWith(
+                                  activeTrackColor: Pallete.whiteColor,
+                                  inactiveTrackColor:
+                                      // ignore: deprecated_member_use
+                                      Pallete.whiteColor.withOpacity(0.117),
+                                  thumbColor: Pallete.whiteColor,
+                                  trackHeight: 4,
+                                  overlayShape: SliderComponentShape.noOverlay),
+                              child: Slider(
+                                  value: _sliderValue,
+                                  min: 0,
+                                  max: 1,
+                                  onChanged: (val) {
+                                    setState(() {
+                                      _isDragging = true;
+                                      _sliderValue = val;
+                                    });
+                                  },
+                                  onChangeEnd: (val) {
+                                    setState(() {
+                                      _isDragging = false;
+                                    });
+                                    musicNotifier.seek(val);
+                                  }),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,

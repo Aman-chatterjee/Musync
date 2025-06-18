@@ -6,6 +6,14 @@ plugins {
 }
 
 
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader("UTF-8") { reader ->
+        localProperties.load(reader)
+    }
+}
+
  configurations.all {
     resolutionStrategy {
         eachDependency {
@@ -18,16 +26,17 @@ plugins {
 
 android {
     namespace = "com.example.musync"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 35
     ndkVersion = flutter.ndkVersion
+    ndkVersion = localProperties.getProperty("ndkVersion") ?: "25.1.8937393"
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_19
-        targetCompatibility = JavaVersion.VERSION_19
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_19
+        jvmTarget = JavaVersion.VERSION_21
     }
 
     defaultConfig {

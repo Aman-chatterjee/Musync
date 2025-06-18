@@ -83,6 +83,7 @@ def favorite_music(fav_music: FavoriteMusic, db: Session = Depends(get_db), auth
     if fav:
         db.delete(fav)
         db.commit()
+        #db.refresh(fav)
         return {'message' : False}
     else:
         id = uuid.uuid4()

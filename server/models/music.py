@@ -1,4 +1,5 @@
 from sqlalchemy import TEXT, TIMESTAMP, VARCHAR, Column, func
+from sqlalchemy.orm import relationship
 from models.base import Base
 
 class Music(Base):

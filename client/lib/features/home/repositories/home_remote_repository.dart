@@ -79,4 +79,55 @@ class HomeRemoteRepository {
       return Left(AppFailure(message: e.toString()));
     }
   }
+
+  Future<Either<AppFailure, bool>> favoriteMusic(
+      {required String token, required String musicId}) async {
+    try {
+      final res = await http
+          .post(Uri.parse('${ServerConstans.serverURL}/music/favorite'),
+              headers: {
+                'Content-Type': 'application/json',
+                'x-auth-token': token,
+              },
+              body: jsonEncode({'music_id': musicId}))
+          .timeout(Duration(seconds: 10));
+
+      var resBodyMap = jsonDecode(res.body);
+      if (res.statusCode != 200) {
+        resBodyMap = resBodyMap as Map<String, dynamic>;
+        return Left(AppFailure(message: resBodyMap['detail']));
+      }
+
+      return Right(resBodyMap["message"]);
+    } catch (e) {
+      return Left(AppFailure(message: e.toString()));
+    }
+  }
+
+  Future<Either<AppFailure, List<MusicModel>>> getFavoriteMusic(
+      {required String token}) async {
+    try {
+      final res = await http.get(
+          Uri.parse('${ServerConstans.serverURL}/music/list/favorites'),
+          headers: {
+            'Content-Type': 'application/json',
+            'x-auth-token': token,
+          }).timeout(Duration(seconds: 10));
+
+      var resBodyMap = jsonDecode(res.body);
+      if (res.statusCode != 200) {
+        resBodyMap = resBodyMap as Map<String, dynamic>;
+        return Left(AppFailure(message: resBodyMap['detail']));
+      }
+
+      resBodyMap = resBodyMap as List;
+      List<MusicModel> music = [];
+      for (final map in resBodyMap) {
+        music.add(MusicModel.fromMap(map['music']));
+      }
+      return Right(music);
+    } catch (e) {
+      return Left(AppFailure(message: e.toString()));
+    }
+  }
 }

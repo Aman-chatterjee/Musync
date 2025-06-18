@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:musync/core/providers/current_music_notifier.dart';
 import 'package:musync/core/theme/app_pallete.dart';
 import 'package:musync/core/utils.dart';
+import 'package:musync/features/home/view/viewmodel/home_viewmodel.dart';
 import 'package:musync/features/home/view/widgets/music_player.dart';
 
 class MusicSlab extends ConsumerWidget {
@@ -108,7 +109,11 @@ class MusicSlab extends ConsumerWidget {
                 Row(
                   children: [
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          await ref
+                              .read(homeViewModelProvider.notifier)
+                              .favMusic(musicId: currentMusic.id);
+                        },
                         icon: Icon(
                           CupertinoIcons.heart,
                           color: Pallete.whiteColor,

@@ -9,3 +9,4 @@ class Favorite(Base):
     user_id = Column(TEXT, ForeignKey('users.id'))
 
     music = relationship('Music')
+    user = relationship("User", back_populates='favorites')

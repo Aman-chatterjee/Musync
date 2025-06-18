@@ -1,0 +1,2 @@
+D:/Projects/Flutter/Musync/client/android/app/.cxx/Debug/4o5m5l4h/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/Projects/Flutter/Musync/client/android/app/.cxx/Debug/4o5m5l4h/armeabi-v7a/CMakeFiles/rebuild_cache.dir

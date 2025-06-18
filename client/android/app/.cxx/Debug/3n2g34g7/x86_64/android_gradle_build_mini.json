@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/amanchatterjee/Development/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/amanchatterjee/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Volumes/Aman\u0027s SSD/Projects/Flutter/Musync/client/android/app/.cxx/Debug/3n2g34g7/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/amanchatterjee/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Volumes/Aman\u0027s SSD/Projects/Flutter/Musync/client/android/app/.cxx/Debug/3n2g34g7/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}
