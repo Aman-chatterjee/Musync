@@ -29,23 +29,24 @@
 <table>
   <tr>
     <td align="center">
-      <img src="./screenshots/welcome_screen.jpg" width="200"/><br/><b>Welcome Screen</b>
+      <img src="./screenshots/login_screen.jpeg" width="200"/><br/><b>Login Screen</b>
     </td>
     <td align="center">
-      <img src="./screenshots/home_screen.jpg" width="200"/><br/><b>Home Screen</b>
+      <img src="./screenshots/signup_screen.jpeg" width="200"/><br/><b>Signup Screen</b>
+    </td>
+    <td align="center">
+      <img src="./screenshots/home_screen.jpeg" width="200"/><br/><b>Home Screen</b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="./screenshots/music_player.jpg" width="200"/><br/><b>Music Player</b>
+      <img src="./screenshots/music_player.jpeg" width="200"/><br/><b>Music Player</b>
     </td>
     <td align="center">
-      <img src="./screenshots/favorites.jpg" width="200"/><br/><b>Favorites</b>
+      <img src="./screenshots/favorites.jpeg" width="200"/><br/><b>Favorites</b>
     </td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center">
-      <img src="./screenshots/demo.gif" width="400"/><br/><b>App Demo</b>
+     <td align="center">
+      <img src="./screenshots/upload_screen.jpeg" width="200"/><br/><b>Upload Music</b>
     </td>
   </tr>
 </table>
