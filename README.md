@@ -57,7 +57,9 @@
 
 ### 📁 Project Structure
 musync/
+
 ├── client/        # Flutter frontend
+
 ├── server/        # FastAPI backend (Docker-ready)
 
 ---
@@ -117,6 +119,7 @@ CLOUDINARY_SECRET_KEY=your_secret
 
 📬 Contact
 •	GitHub: @Aman-chatterjee
+
 •	Email: amanchatterjee121@gmail.com
 
 ⸻
