@@ -6,7 +6,7 @@ services:
     container_name: fastapi_postgres
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: ac1098121
+      POSTGRES_PASSWORD: password
       POSTGRES_DB: musync
     volumes:
       - postgres_data:/var/lib/postgresql/data
